@@ -10,9 +10,21 @@ $jumbotron-bg: #fff;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+.navbar-brand {
+	font-weight: bold;
+}
 .center {
 	text-align: center;
 }
-.navbar-brand {
-	font-weight: bold;
+.left {
+  float: left;
+}
+.right {
+	float: right;
+}
+.hide {
+	display: none;
+}
+.show {
+	display: block;	
 }
