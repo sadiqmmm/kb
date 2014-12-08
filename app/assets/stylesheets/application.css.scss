@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+.wrapper {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0px 2px 5px 0px #ccc;	
+}

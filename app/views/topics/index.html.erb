@@ -1,13 +1,19 @@
-<p id="notice"><%= notice %></p>
+<%= link_to 'New Topic', new_topic_path, class: "btn btn-primary" %>
 
 <h1>Listing Topics</h1>
-  
-  <% @topics.each do |topic| %> 
-  <div id="topic_<%= topic.id %>">
-    <%= link_to topic.name, topic %>
-    <%= link_to 'Edit', edit_topic_path(topic) %>
-    <%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %>   
-  </div>
+<table class="table table-condensed table-hover">
+
+  <% @topics.each do |topic| %>  			
+	  <tr class="topic">
+	    <td>
+	      <%= link_to topic.name, topic, class: "topic-link"%> 		 
+			  <span class="access-links hide">
+					  <%= link_to edit_topic_path(topic) do %>
+					    <span class="glyphicon glyphicon-edit"></span>			    
+					  <% end %> 					  
+					</span>
+		  </td>
+	  </tr>
   <% end %>
 
-<%= link_to 'New Topic', new_topic_path %>
+</table>
