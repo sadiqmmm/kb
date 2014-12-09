@@ -1,6 +1,6 @@
-class CreateTopics < ActiveRecord::Migration
+class CreateBooks < ActiveRecord::Migration
   def change
-    create_table :topics do |t|
+    create_table :books do |t|
       t.string :name
 
       t.timestamps null: false
