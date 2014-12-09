@@ -1,19 +1,12 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @chapter.name %>
+
+<p id="chapter-id"><%= @chapter.name %></p>
+
+<p class="back-link">
+	<%= link_to book_path(@chapter.book) do %>
+	  <span class="glyphicon glyphicon-arrow-left"></span>
+	    Back
+	<% end %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @chapter.description %>
-</p>
-
-<p>
-  <strong>Book:</strong>
-  <%= @chapter.book %>
-</p>
-
-<%= link_to 'Edit', edit_chapter_path(@chapter) %> |
-<%= link_to 'Back', chapters_path %>
+<h3>All Chapters</h3>

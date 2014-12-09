@@ -1,7 +1,7 @@
 <div class="chapter">
   <div class="panel panel-default">
     <div class="panel-heading">  
-      <span class="chapter-name"><%= chapter.name %></span> -
+      <span class="chapter-name"><%= link_to chapter.name, book_chapter_path(@book, chapter) %></span> -
       
       <span class="chapter-description">( <%= chapter.description %> )</span>  
       
