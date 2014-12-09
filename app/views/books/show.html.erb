@@ -2,5 +2,12 @@
 
 <p id="book-id"><%= @book.name %></p>
 
+<p class="back-link">
+	<%= link_to books_path do %>
+	  <span class="glyphicon glyphicon-arrow-left"></span>
+	    Back
+	<% end %>
+</p>
+
 <h3>All Chapters</h3>
 <%= render partial: 'books/chapter', collection: @book.chapters %>
