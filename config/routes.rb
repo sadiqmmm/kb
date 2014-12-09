@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :chapters
+
   resources :books
   
   devise_for :users  

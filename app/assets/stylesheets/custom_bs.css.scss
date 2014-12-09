@@ -5,8 +5,10 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
 $navbar-height: 45px;
 $navbar-default-bg: #fff;
 $navbar-default-brand-color: #c0392b;
-$brand-primary: #c0392b;
 $jumbotron-bg: #fff;
+$brand-primary: #c0392b;
+$brand-warning: #f39c12;
+$brand-success: #27ae60;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
