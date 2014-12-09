@@ -16,7 +16,7 @@ class ChaptersController < ApplicationController
   def new
     @book = Book.find(params[:book_id])
     @chapter = @book.chapters.new
-    respond_with(@chapter)
+    respond_with(@chapter.book)
   end
 
   def edit    
@@ -25,13 +25,19 @@ class ChaptersController < ApplicationController
   def create
     @book = Book.find(params[:book_id])
     @chapter = @book.chapters.new(chapter_params)    
-    @chapter.save
-    respond_with(@chapter.book)
+    if @chapter.save    
+      respond_with(@chapter.book)
+    else
+      respond_with(@book, @chapter)
+    end  
   end
 
   def update
-    @chapter.update(chapter_params)
-    respond_with(@chapter.book)
+    if @chapter.update(chapter_params)
+      respond_with(@chapter.book)
+    else
+      respond_with(@book, @chapter)
+    end
   end
 
   def destroy

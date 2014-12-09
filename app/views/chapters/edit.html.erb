@@ -1,6 +1,8 @@
+<%= link_to book_path(@book) do %>
+  <span class="glyphicon glyphicon-arrow-left"></span>
+    Back
+<% end %>
+
 <h1>Editing Chapter</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @chapter.book %> |
-<%= link_to 'Back', book_chapters_path %>
