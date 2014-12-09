@@ -4,7 +4,8 @@ class ChaptersController < ApplicationController
   respond_to :html
 
   def index
-    @chapters = Chapter.all
+    @book = Book.find(params[:book_id])
+    @chapters = @book.chapters.all
     respond_with(@chapters)
   end
 
@@ -13,22 +14,24 @@ class ChaptersController < ApplicationController
   end
 
   def new
-    @chapter = Chapter.new
+    @book = Book.find(params[:book_id])
+    @chapter = @book.chapters.new
     respond_with(@chapter)
   end
 
-  def edit
+  def edit    
   end
 
   def create
-    @chapter = Chapter.new(chapter_params)
+    @book = Book.find(params[:book_id])
+    @chapter = @book.chapters.new(chapter_params)    
     @chapter.save
     respond_with(@chapter)
   end
 
   def update
     @chapter.update(chapter_params)
-    respond_with(@chapter)
+    respond_with(@chapter.book)
   end
 
   def destroy
@@ -38,7 +41,8 @@ class ChaptersController < ApplicationController
 
   private
     def set_chapter
-      @chapter = Chapter.find(params[:id])
+      @book = Book.find(params[:book_id])
+      @chapter = @book.chapters.find(params[:id])
     end
 
     def chapter_params

@@ -1,4 +1,4 @@
-<%= link_to 'New chapter', new_chapter_path, class: "btn btn-warning right" %>
+<%= link_to 'New chapter', new_book_chapter_path, class: "btn btn-warning right" %>
 
 <h1>All chapters</h1>
 <table class="table table-hover">
@@ -6,9 +6,9 @@
   <% @chapters.each do |chapter| %>       
     <tr class="chapter">
       <td>
-        <%= link_to chapter.name, chapter, class: "chapter-link"%>     
+        <%= link_to chapter.name, class: "chapter-link"%>     
         <span class="access-links hide">
-            <%= link_to edit_chapter_path(chapter) do %>
+            <%= link_to edit_book_chapter_path(chapter) do %>
               <span class="glyphicon glyphicon-edit"></span>      
             <% end %>             
           </span>

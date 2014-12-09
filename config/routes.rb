@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :chapters
-
-  resources :books
-  
+  resources :books do 
+    resources :chapters
+  end
+    
   devise_for :users  
   root to: "books#index"
 
