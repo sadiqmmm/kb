@@ -10,3 +10,13 @@ $(document).ready ->
     return
 
   return
+
+$(document).ready ->
+  $(".chapter").hover (->
+    $('.chapter-access-links', this).removeClass "hide"
+    return
+  ), ->
+    $('.chapter-access-links', this).addClass "hide"
+    return
+
+  return  
