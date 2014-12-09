@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :contents
-
-  resources :titles
-
   resources :topics
   root to: "topics#index"
 
