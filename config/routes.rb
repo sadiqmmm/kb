@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   
-  resources :sections
-
   resources :books do 
     resources :chapters      
   end
@@ -12,6 +10,8 @@ Rails.application.routes.draw do
     
   devise_for :users  
   root to: "books#index"
+
+  mount PgHero::Engine, at: "pghero"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
