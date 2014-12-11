@@ -1,8 +1,7 @@
-<%= link_to 'New chapter', new_book_chapter_path(@book), class: "btn btn-warning right" %>
-
-<p id="book-id"><%= @book.name %></p>
-<p id="book-description"><%= @book.description %></p>
-
+<div class="book-chapter">
+	<p id="book-id"><%= @book.name %></p>
+  <p id="book-description"><%= @book.description %></p>
+</div>
 <p class="back-link">
 	<%= link_to books_path do %>
 	  <span class="glyphicon glyphicon-arrow-left"></span>
@@ -10,5 +9,9 @@
 	<% end %>
 </p>
 
-<h3>All Chapters</h3>
+<p>
+  <%= link_to 'New chapter', new_book_chapter_path(@book), class: "btn btn-warning right chapter-btn" %>
+</p>
+
+<h3><%= pluralize( @book.chapters.all.length, "Chapter") %></h3>
 <%= render partial: 'books/chapter', collection: @book.chapters %>

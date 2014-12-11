@@ -1,6 +1,6 @@
 <%= link_to 'New book', new_book_path, class: "btn btn-primary right" %>
 
-<h1>All books</h1>
+<h1><%= pluralize( @books.all.length, "Book") %></h1>
 <table class="table table-hover">
 
   <% @books.each do |book| %>       

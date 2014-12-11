@@ -1,8 +1,8 @@
 <%= link_to book_path(@book) do %>
   <span class="glyphicon glyphicon-arrow-left"></span>
-    Back
+    Back to <strong><%= @book.name %></strong> Book
 <% end %>
 
-<h1>Editing Chapter</h1>
+<h1>Editing Chapter <strong><%= @chapter.name %></strong> </h1>
 
 <%= render 'form' %>
