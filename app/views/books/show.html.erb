@@ -1,6 +1,7 @@
 <%= link_to 'New chapter', new_book_chapter_path(@book), class: "btn btn-warning right" %>
 
 <p id="book-id"><%= @book.name %></p>
+<p id="book-description"><%= @book.description %></p>
 
 <p class="back-link">
 	<%= link_to books_path do %>
