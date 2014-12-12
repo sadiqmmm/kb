@@ -101,6 +101,7 @@ GEM
     multi_json (1.10.1)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
+    nprogress-rails (0.1.6.3)
     orm_adapter (0.5.0)
     pg (0.17.1)
     pghero (0.1.7)
@@ -196,6 +197,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   kaminari
+  nprogress-rails
   pg
   pghero
   puma (~> 2.10.2)
