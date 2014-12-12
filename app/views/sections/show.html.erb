@@ -2,7 +2,7 @@
 	<p id="section-id"><%= @section.name %></p>  
 </div>
 
-<p class="back-link">
+<p class="back-link-spl">
 	<%= link_to book_path(@chapter.book) do %>
 	  <span class="glyphicon glyphicon-arrow-left"></span>
 	    Back to <strong><%= @book.name %></strong> Book
@@ -10,7 +10,10 @@
 </p>
 
 <p>
-  <%= link_to 'Edit section', edit_book_chapter_section_path(@book, @chapter, @section), class: "btn btn-success right section-btn" %>
+  <%= link_to edit_book_chapter_section_path(@book, @chapter, @section), class: "btn btn-success right section-btn" do %>
+    <span class="glyphicon glyphicon-edit"></span>
+    Edit section
+  <% end %>
 </p>
 
 <p id="chapter-description"><%= @section.description %></p>

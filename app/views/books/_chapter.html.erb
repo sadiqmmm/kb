@@ -18,9 +18,9 @@
       </span>
     </div>
     
-    <div class="panel-body">
+    <div class="panel-body panel-body-min-height">
     <p>
-      <%= link_to new_book_chapter_section_path(@book, chapter), class: "btn btn-success right section-btn" do %>
+      <%= link_to new_book_chapter_section_path(@book, chapter), class: "btn btn-success right section-btn chapter-access-links hide" do %>
           <span class="glyphicon glyphicon-credit-card"></span>
           New section
         <% end %>

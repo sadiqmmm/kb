@@ -4,6 +4,9 @@
 .book {
 	text-transform: capitalize;
 }
+.book-total {
+  color: #c0392b;
+}
 .book-link:hover {	
 	font-weight: bold;
 }
@@ -25,4 +28,7 @@
 h3 {
 	padding: 10px 0px;
 	clear: both;
+}
+.panel-body-min-height {
+  min-height: 100px;
 }

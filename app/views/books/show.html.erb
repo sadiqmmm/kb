@@ -16,5 +16,8 @@
   <% end %>
 </p>
 
-<h3><%= pluralize( @book.chapters.all.length, "Chapter") %></h3>
+<h3>
+  <span class='glyphicon glyphicon-list-alt'></span> 
+  <span class='chapter-total'><%= pluralize( @book.chapters.all.length, "Chapter") %></span>
+</h3>
 <%= render partial: 'books/chapter', collection: @book.chapters %>
