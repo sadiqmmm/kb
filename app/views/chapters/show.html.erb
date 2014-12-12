@@ -1,5 +1,3 @@
-
-
 <p id="chapter-id"><%= @chapter.name %></p>
 
 <p class="back-link">
@@ -9,4 +7,9 @@
 	<% end %>
 </p>
 
-<h3>All Chapters</h3>
+<p>
+  <%= link_to 'New section', new_book_chapter_section_path(@book, @chapter), class: "btn btn-success right section-btn" %>
+</p>
+
+<h3><%= pluralize( @chapter.sections.all.length, "Section") %></h3>
+<%= render partial: 'chapters/section', collection: @chapter.sections %>

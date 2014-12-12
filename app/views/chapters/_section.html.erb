@@ -1,0 +1,19 @@
+<div class="section">
+  <div class="panel panel-default">
+    <div class="panel-heading">  
+      <span class="section-name"><%= link_to section.name, book_chapter_section_path(@book, @chapter, section) %></span> -
+      
+      <span class="section-description">( <%= section.description %> )</span>  
+      
+      <span class="section-access-links hide">
+        <%= link_to edit_book_chapter_section_path(@book, @chapter, section) do %>
+          <span class="glyphicon glyphicon-edit"></span>
+        <% end %>             
+      </span>
+    </div>
+    
+    <div class="panel-body">
+
+    </div>
+  </div>
+</div>

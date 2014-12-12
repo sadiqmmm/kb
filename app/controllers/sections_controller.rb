@@ -4,7 +4,9 @@ class SectionsController < ApplicationController
   respond_to :html
 
   def index
-    @sections = Section.all
+    @book = Book.find(params[:book_id])
+    @chapter = Chapter.find(params[:chapter_id])
+    @sections = @chapter.sections.all
     respond_with(@sections)
   end
 
@@ -13,22 +15,32 @@ class SectionsController < ApplicationController
   end
 
   def new
-    @section = Section.new
-    respond_with(@section)
+    @book = Book.find(params[:book_id])
+    @chapter = Chapter.find(params[:chapter_id])
+    @section = @chapter.sections.new    
+    respond_with(@section.chapter)
   end
 
   def edit
   end
 
   def create
-    @section = Section.new(section_params)
-    @section.save
-    respond_with(@section)
+    @book = Book.find(params[:book_id])
+    @chapter = Chapter.find(params[:chapter_id])
+    @section = @chapter.sections.new(section_params)
+    if @section.save
+      respond_with(@chapter.book, @section.chapter)
+    else
+      respond_with(@chapter, @section)
+    end
   end
 
   def update
-    @section.update(section_params)
-    respond_with(@section)
+    if @section.update(section_params)
+      respond_with(@section.chapter)
+    else
+      respond_with(@chapter, @section)
+    end
   end
 
   def destroy
@@ -38,7 +50,9 @@ class SectionsController < ApplicationController
 
   private
     def set_section
-      @section = Section.find(params[:id])
+      @book = Book.find(params[:book_id])
+      @chapter = Chapter.find(params[:chapter_id])
+      @section = @chapter.sections.find(params[:id])
     end
 
     def section_params
