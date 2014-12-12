@@ -19,7 +19,7 @@
 #chapter-id {
   float: left;
   padding: 10px 50px;
-  background: #f39c12;
+  background: #d35400;
   color: #fff;
   margin: -20px 0px 0px -20px;
   text-transform: uppercase;
@@ -31,4 +31,9 @@
 h3 {
 	padding: 10px 0px;
 	clear: both;
+}
+.chapter-list {
+  a {
+    color: #d35400;
+  }
 }

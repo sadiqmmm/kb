@@ -11,7 +11,10 @@
 </p>
 
 <p>
-  <%= link_to 'New section', new_book_chapter_section_path(@book, @chapter), class: "btn btn-success right section-btn" %>
+  <%= link_to new_book_chapter_section_path(@book, @chapter), class: "btn btn-success right section-btn" do %>
+    <span class="glyphicon glyphicon-tasks"></span>
+    New section
+  <% end %>
 </p>
 
 <h3><%= pluralize( @chapter.sections.all.length, "Section") %></h3>

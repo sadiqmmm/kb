@@ -1,15 +1,18 @@
 <%= link_to 'New book', new_book_path, class: "btn btn-primary right" %>
 
-<h1><%= pluralize( @books.all.length, "Book") %></h1>
+<h1><span class='glyphicon glyphicon-book'></span> <%= pluralize( @books.all.length, "Book") %></h1>
 <table class="table table-hover">
 
   <% @books.each do |book| %>       
     <tr class="book">
       <td>
-        <%= link_to book.name, book, class: "book-link"%>     
+        <%= link_to book, class: "book-link" do %>
+          <span class="glyphicon glyphicon-book"></span>
+          <%= book.name %>
+        <% end %>     
         <span class="access-links hide">
             <%= link_to edit_book_path(book) do %>
-              <span class="glyphicon glyphicon-edit"></span>      
+              <span class="glyphicon glyphicon-edit"></span> Edit     
             <% end %>             
           </span>
       </td>

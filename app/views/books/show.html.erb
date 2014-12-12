@@ -1,5 +1,5 @@
 <div class="book-chapter">
-	<p id="book-id"><%= @book.name %></p>
+	<p id="book-id"><span class='glyphicon glyphicon-book'></span> <%= @book.name %></p>
   <p id="book-description"><%= @book.description %></p>
 </div>
 <p class="back-link">
@@ -10,7 +10,10 @@
 </p>
 
 <p>
-  <%= link_to 'New chapter', new_book_chapter_path(@book), class: "btn btn-warning right chapter-btn" %>
+  <%= link_to new_book_chapter_path(@book), class: "btn btn-warning right chapter-btn" do %>
+    <span class='glyphicon glyphicon-list-alt'></span>
+     New chapter
+  <% end %>
 </p>
 
 <h3><%= pluralize( @book.chapters.all.length, "Chapter") %></h3>

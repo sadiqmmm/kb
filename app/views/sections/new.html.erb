@@ -1,7 +1,9 @@
-<%= link_to book_chapter_path(@book, @chapter) do %>
-  <span class="glyphicon glyphicon-arrow-left"></span>
-    Back to <strong><%= @chapter.name %></strong> Chapter
-<% end %>
+<p class="back-link">
+	<%= link_to book_path(@chapter.book) do %>
+	  <span class="glyphicon glyphicon-arrow-left"></span>
+	    Back to <strong><%= @book.name %></strong> Book
+	<% end %>
+</p>
 
 <h1>Add New Section To <strong><%= @chapter.name %></strong></h1>
 
