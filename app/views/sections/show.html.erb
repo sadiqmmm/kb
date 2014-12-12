@@ -1,11 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="chapter-section">
+	<p id="section-id"><%= @section.name %></p>  
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @section.name %>
+<p class="back-link">
+	<%= link_to book_path(@chapter.book, @section) do %>
+	  <span class="glyphicon glyphicon-arrow-left"></span>
+	    Back to <strong><%= @chapter.name %></strong> Chapter
+	<% end %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @section.description %>
+  <%= link_to 'Edit section', edit_book_chapter_section_path(@book, @chapter, @section), class: "btn btn-success right section-btn" %>
 </p>
+
+<p id="chapter-description"><%= @section.description %></p>

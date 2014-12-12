@@ -1,4 +1,7 @@
-<p id="chapter-id"><%= @chapter.name %></p>
+<div class="chapter-section">
+	<p id="chapter-id"><%= @chapter.name %></p>
+  <p id="chapter-description"><%= @chapter.description %></p>
+</div>
 
 <p class="back-link">
 	<%= link_to book_path(@chapter.book) do %>
