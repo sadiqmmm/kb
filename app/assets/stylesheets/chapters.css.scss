@@ -8,7 +8,13 @@
   color: #d35400;
 }
 .chapter-name {
-	font-weight: bold;
+	padding: 11px;
+  background: #d35400;
+  color: #fff;
+  margin-left: -15px;
+  margin-right: 10px;
+  border-top-left-radius: 3px;
+  text-transform: uppercase;
 }
 .panel-heading {
 	text-transform: capitalize;

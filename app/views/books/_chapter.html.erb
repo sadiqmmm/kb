@@ -1,14 +1,12 @@
 <div class="chapter">
   <div class="panel panel-default">
     <div class="panel-heading chapter-list">  
-      <span class="chapter-name">
-        <%= link_to book_chapter_path(@book, chapter) do %>
+      <span class="chapter-name">        
           <span class='glyphicon glyphicon-list-alt'></span>
           <%= chapter.name %>
-        <% end %>  
-      </span> -
+      </span> 
       
-      <span class="chapter-description">( <%= chapter.description %> )</span>  
+      <span class="chapter-description"> <%= chapter.description %> </span>  
       
       <span class="chapter-access-links hide">
         <%= link_to edit_book_chapter_path(@book, chapter) do %>
