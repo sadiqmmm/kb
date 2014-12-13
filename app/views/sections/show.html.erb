@@ -16,4 +16,4 @@
   <% end %>
 </p>
 
-<p id="chapter-description"><%= @section.description %></p>
+<p id="chapter-description"><%= sanitize (@section.description) %></p>
