@@ -29,7 +29,7 @@ class SectionsController < ApplicationController
     @chapter = Chapter.find(params[:chapter_id])
     @section = @chapter.sections.new(section_params)
     if @section.save
-      respond_with(@chapter.book)
+      respond_with(@book, @chapter, @section)
     else
       respond_with(@chapter, @section)
     end
@@ -37,7 +37,7 @@ class SectionsController < ApplicationController
 
   def update
     if @section.update(section_params)
-      respond_with(@chapter.book)
+      respond_with(@book, @chapter, @section)
     else
       respond_with(@chapter, @section)
     end
