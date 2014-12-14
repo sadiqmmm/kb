@@ -3,9 +3,13 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  $("#edit").editable
+  $("#edit").on("editable.contentChanged editable.initialized", (e, editor) ->
+    $("pre#previewer").text editor.cleanTags(editor.getHTML())
+    return
+  ).editable
     inlineMode: false
     toolbarFixed: false
     placeholder: 'Start to type something...'    
     imageResize: true
+    height: 600    
   return
