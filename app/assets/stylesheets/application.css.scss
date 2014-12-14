@@ -11,9 +11,7 @@
  * file per style scope.
  *
  *= require nprogress
- *= require nprogress-bootstrap
- *= require froala_editor.min.css
- *= require froala_style.min.css
+ *= require nprogress-bootstrap 
  *= require font-awesome
  *= require_tree .
  *= require_self

@@ -29,5 +29,4 @@ gem 'kaminari'
 gem 'carrierwave'
 gem 'pghero'
 gem 'nprogress-rails'
-gem "wysiwyg-rails"
 gem "font-awesome-rails"
