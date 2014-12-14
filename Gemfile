@@ -27,6 +27,8 @@ gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
 gem 'kaminari'
 gem 'carrierwave'
+gem 'mini_magick'
+gem 'ckeditor'
 gem 'pghero'
 gem 'nprogress-rails'
 gem "font-awesome-rails"

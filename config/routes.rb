@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   end
   
   devise_for :users  
+  
   root to: "books#index"
-
+  
+  mount Ckeditor::Engine => '/ckeditor'
   mount PgHero::Engine, at: "pghero"
 
   # The priority is based upon order of creation: first created -> highest priority.
