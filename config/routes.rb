@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'pages/home'
+
   resources :books do 
     resources :chapters do 
       resources :sections  
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
   
   devise_for :users  
   
-  root to: "books#index"
+  root to: "pages#index"
   
   mount Ckeditor::Engine => '/ckeditor'
   mount PgHero::Engine, at: "pghero"
