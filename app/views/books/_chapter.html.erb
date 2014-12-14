@@ -2,7 +2,7 @@
   <div class="panel panel-default">
     <div class="panel-heading chapter-list">  
       <span class="chapter-name">        
-          <span class='glyphicon glyphicon-list-alt'></span>
+          <span class='fa fa-file'></span>
           <%= chapter.name %>
       </span> 
       
@@ -19,7 +19,7 @@
     <div class="panel-body panel-body-min-height">
     <p>
       <%= link_to new_book_chapter_section_path(@book, chapter), class: "btn btn-success right section-btn chapter-access-links hide" do %>
-          <span class="glyphicon glyphicon-credit-card"></span>
+          <span class="fa fa-file-text"></span>
           New section
         <% end %>
     </p>
@@ -27,7 +27,7 @@
       <% chapter.sections.each do |section| %>        
         <p class="section-list">
           <%= link_to book_chapter_section_path(@book, chapter, section) do %>
-          <span class="glyphicon glyphicon-credit-card"></span>          
+          <span class="fa fa-file-text"></span>          
             <%= section.name %>
           <% end %>
         </p>

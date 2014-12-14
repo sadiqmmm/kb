@@ -11,13 +11,13 @@
 
 <p>
   <%= link_to new_book_chapter_path(@book), class: "btn btn-warning right chapter-btn" do %>
-    <span class='glyphicon glyphicon-list-alt'></span>
+    <span class='fa fa-file'></span>
      New chapter
   <% end %>
 </p>
 
 <h3>
-  <span class='glyphicon glyphicon-list-alt'></span> 
+  <span class='fa fa-file'></span> 
   <span class='chapter-total'><%= pluralize( @book.chapters.all.length, "Chapter") %></span>
 </h3>
 <%= render partial: 'books/chapter', collection: @book.chapters %>

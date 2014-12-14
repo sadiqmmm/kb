@@ -1,4 +1,7 @@
-<%= link_to 'New book', new_book_path, class: "btn btn-primary right" %>
+<%= link_to new_book_path, class: "btn btn-primary right" do %>
+  <span class="glyphicon glyphicon-book"></span>
+  New book
+<% end %>
 
 <h1>
   <span class='glyphicon glyphicon-book'></span> 

@@ -1,5 +1,8 @@
 <div class="chapter-section">
-	<p id="section-id"><%= @section.name %></p>  
+	<p id="section-id">
+	  <span class="fa fa-file-text"></span>
+	  <%= @section.name %>
+	</p>  
 </div>
 
 <p class="back-link-spl">
@@ -12,8 +15,8 @@
 <p>
   <%= link_to edit_book_chapter_section_path(@book, @chapter, @section), class: "btn btn-success right section-btn" do %>
     <span class="glyphicon glyphicon-edit"></span>
-    Edit section
+    Edit
   <% end %>
 </p>
 
-<p id="chapter-description"><%= sanitize (@section.description) %></p>
+<div id="chapter-description"><%= sanitize (@section.description) %></div>
