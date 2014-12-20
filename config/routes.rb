@@ -13,7 +13,12 @@ Rails.application.routes.draw do
   root to: "pages#index"
   
   mount Ckeditor::Engine => '/ckeditor'
-  mount PgHero::Engine, at: "pghero"
+  
+  # Mount pghero only in production
+  if Rails.env.production?
+    mount PgHero::Engine, at: "pghero"
+  end
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
