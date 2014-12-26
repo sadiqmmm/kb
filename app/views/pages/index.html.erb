@@ -1,21 +1,30 @@
-<% unless user_signed_in? %>
+<% if user_signed_in? %>
+	<div class="center">
+	  <h1>Welcome to Meri Book Online</h1>
+	  <br />
+	  <p>
+	    <%= link_to "Click here to view all Books", books_path, class: "btn btn-success" %>
+	  </p>
+  </div>
 
-<div class="jumbotron center">
-	<h1><span style="color: #c0392b;">i</span>Book</h1>	
-	<p><i>Better than Google Docs</i></p>
-	<p>Simple and Secure way to save your knowledge in Book style.</p>	
+<% else %>
 
-	<p class="process-step">
-	  <span class="glyphicon glyphicon-book b"></span> Book <span class="glyphicon glyphicon-arrow-right"></span>
-	  <span class="fa fa-file c"></span> Chapters <span class="glyphicon glyphicon-arrow-right"></span>
-	  <span class="fa fa-file-text s"></span> Sections
-	</p>
-		
-		<p>
-		  <%=link_to "Login", new_user_session_path, class: "btn btn-default btn-lg" %> 
-		  <%=link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
-		</p>	 
-</div>
+	<div class="jumbotron center front-bg">
+		<h1><span style="color: #c0392b;">Meri Book</span> Online</h1>			
+		<p>Simple and Secure way to save your knowledge in Book style.</p>	
+
+		<p class="process-step">
+		  <span class="fa fa-book fa-4x b"></span> Book <span class="glyphicon glyphicon-arrow-right"></span>
+		  <span class="fa fa-file fa-4x c"></span> Chapters <span class="glyphicon glyphicon-arrow-right"></span>
+		  <span class="fa fa-file-text fa-4x s"></span> Sections
+		</p>
+			
+			<p>
+			  <%=link_to "Login", new_user_session_path, class: "btn btn-default btn-lg" %> 
+			  <%=link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+			</p>	 
+	</div>
+
 <% end %>
-<h1>Welcome </h1>
-<p><%= link_to "Click here to view all Books", books_path %></p>
+
+
