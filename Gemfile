@@ -10,12 +10,17 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
+gem 'sdoc', '~> 0.4.0', group: :doc 
+
 group :development, :test do
   gem 'mysql2'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'sdoc', '~> 0.4.0', group: :doc  
+  gem 'pry-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'rails_best_practices'   
 end
 
 group :production do 	
@@ -35,3 +40,4 @@ gem 'mini_magick'
 gem 'ckeditor'
 gem 'nprogress-rails'
 gem "font-awesome-rails"
+gem "acts-as-taggable-on"
