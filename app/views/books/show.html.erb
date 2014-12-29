@@ -19,6 +19,6 @@
 
 <h3>
   <span class='fa fa-file'></span> 
-  <span class='chapter-total'><%= pluralize( @book.chapters.all.length, "Chapter") %></span>
+  <span class='chapter-total'><%= pluralize( @book.chapters.all.size, "Chapter") %></span>
 </h3>
 <%= render partial: 'books/chapter', collection: @book.chapters %>
