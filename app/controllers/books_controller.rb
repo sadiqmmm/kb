@@ -5,7 +5,7 @@ class BooksController < ApplicationController
   respond_to :html
 
   def index
-    @books = Book.all
+    @books = current_user.books.all
     respond_with(@books)
   end
 
@@ -39,7 +39,7 @@ class BooksController < ApplicationController
 
   private
     def set_book
-      @book = Book.find(params[:id])
+      @book = current_user.books.find(params[:id])
     end
 
     def book_params
