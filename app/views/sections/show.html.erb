@@ -3,6 +3,7 @@
 	  <span class="fa fa-file-text"></span>
 	  <%= @section.name %>
 	</p>  
+	<p id="section-time">Created on <%= @section.created_at.strftime("%b #{@section.created_at.day.ordinalize}, %Y") %> | Updated <%= time_ago_in_words(@section.updated_at) %> ago</p>
 </div>
 
 <p class="back-link-spl">

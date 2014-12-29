@@ -1,6 +1,7 @@
 <div class="chapter-section">
-	<p id="chapter-id"><%= @chapter.name %></p>
+  <p id="chapter-id"><%= @chapter.name %></p>
   <p id="chapter-description"><%= @chapter.description %></p>
+  <p id="chapter-time">Created on <%= @chapter.created_at.strftime("%b #{@chapter.created_at.day.ordinalize}, %Y") %> | Updated <%= time_ago_in_words(@chapter.updated_at) %> ago</p>
 </div>
 
 <p class="back-link">
