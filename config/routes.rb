@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   get 'pages/home'
+  get 'tags/:tag', to: 'books#index', as: :tag
 
   resources :books do 
     resources :chapters do 

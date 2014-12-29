@@ -5,8 +5,13 @@ class BooksController < ApplicationController
   respond_to :html
 
   def index
-    @books = current_user.books.all
-    respond_with(@books)
+    if params[:tag]      
+      @books = current_user.books.tagged_with(params[:tag])
+      respond_with(@books)
+    else
+      @books = current_user.books.all
+      respond_with(@books)
+    end
   end
 
   def show
@@ -43,6 +48,6 @@ class BooksController < ApplicationController
     end
 
     def book_params
-      params.require(:book).permit(:name, :description)
+      params.require(:book).permit(:name, :description, :tag_list)
     end
 end

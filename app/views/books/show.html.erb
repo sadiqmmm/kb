@@ -2,6 +2,7 @@
 	<p id="book-id"><span class='glyphicon glyphicon-book'></span> <%= @book.name %></p>
   <p id="book-description"><%= @book.description %></p>
   <p id="book-time">Created on <%= @book.created_at.strftime("%b #{@book.created_at.day.ordinalize}, %Y") %> | Updated <%= time_ago_in_words(@book.updated_at) %> ago</p>
+    <p id="book-tags"> Tags: <%= sanitize @book.tag_list.map { |t| link_to t, tag_path(t), class: "label label-default" }.join(' ') %></p>
 </div>
 <p class="back-link">
 	<%= link_to books_path do %>
