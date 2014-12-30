@@ -16,6 +16,10 @@
     <%= f.text_field :name, autofoucs: true, class: "form-control" %>
   </div>
   <div class="form-group">
+    <%= f.label :tag_list, "Tags (separated by commas)" %>
+    <%= f.text_field :tag_list, value: @section.tag_list.to_s, class: "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label :description, "Content" %>
     <%= f.cktext_area :description, class: "form-control", :ckeditor => { :height => 500 } %>
   </div>
