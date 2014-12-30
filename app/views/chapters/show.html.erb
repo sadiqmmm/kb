@@ -1,16 +1,16 @@
 <div class="chapter-section">
-  <p id="chapter-id"><%= @chapter.name %></p>
-  <p id="chapter-description"><%= @chapter.description %></p>
-  <p id="chapter-time">Created on <%= @chapter.created_at.strftime("%b #{@chapter.created_at.day.ordinalize}, %Y") %> | Updated <%= time_ago_in_words(@chapter.updated_at) %> ago</p>
-  <p id="chapter-tags"> Tags: <%= sanitize @chapter.tag_list.map { |t| link_to t, tag_path(t), class: "label label-default" }.join(' ') %></p>
+  <ul class="breadcrumb">
+    <li><%= link_to "All Books", books_path %></li>
+    <li><%= link_to @book.name, book_path(@book) %></li> 
+    <li><%= link_to @chapter.name, book_chapter_path(@book, @chapter) %></li> 
+  </ul>
+  <div class="chapter-cover">
+    <p id="chapter-id"><%= @chapter.name %></p>
+    <p id="chapter-description">Description: <%= @chapter.description %></p>
+    <p id="chapter-time">Time: Created on <%= @chapter.created_at.strftime("%b #{@chapter.created_at.day.ordinalize}, %Y") %> | Updated <%= time_ago_in_words(@chapter.updated_at) %> ago</p>
+    <p id="chapter-tags"> Tags: <%= sanitize @chapter.tag_list.map { |t| link_to t, tag_path(t), class: "label label-default" }.join(' ') %></p>
+  </div>  
 </div>
-
-<p class="back-link">
-	<%= link_to book_path(@chapter.book) do %>
-	  <span class="glyphicon glyphicon-arrow-left"></span>
-	    Back to <strong><%= @book.name %></strong> Book
-	<% end %>
-</p>
 
 <p>
   <%= link_to new_book_chapter_section_path(@book, @chapter), class: "btn btn-success right section-btn" do %>

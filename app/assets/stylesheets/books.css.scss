@@ -15,10 +15,10 @@
 }
 #book-id {
   float: left;
-  padding: 10px 50px;
+  padding: 5px;
   background: #c0392b;
   color: #fff;
-  margin: -20px 0px 0px -20px;
+  margin: 0px 0px 0px 0px;
   text-transform: uppercase;
 }
 #book-description {
@@ -34,4 +34,10 @@ h3 {
 }
 #book-time {
   color: #ccc;
+}
+.book-cover {
+  padding: 10px;
+  background: whitesmoke;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }

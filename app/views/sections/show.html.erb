@@ -1,18 +1,19 @@
 <div class="chapter-section">
-	<p id="section-id">
-	  <span class="fa fa-file-text"></span>
-	  <%= @section.name %>
-	</p>  
-	<p id="section-time">Created on <%= @section.created_at.strftime("%b #{@section.created_at.day.ordinalize}, %Y") %> | Updated <%= time_ago_in_words(@section.updated_at) %> ago</p>
-	<p id="section-tags"> Tags: <%= sanitize @section.tag_list.map { |t| link_to t, tag_path(t), class: "label label-default" }.join(' ') %></p>
+	<ul class="breadcrumb">
+	  <li><%= link_to "All Books", books_path %></li>
+	  <li><%= link_to @book.name, book_path(@book) %></li> 
+	  <li><%= link_to @chapter.name, book_chapter_path(@book, @chapter) %></li>
+	  <li><%= link_to @section.name, book_chapter_section_path(@book, @chapter, @section) %></li> 
+	</ul>
+	<div class="section-cover">
+		<p id="section-id">
+		  <span class="fa fa-file-text"></span>
+		  <%= @section.name %>
+		</p>  
+		<p id="section-time">Created on <%= @section.created_at.strftime("%b #{@section.created_at.day.ordinalize}, %Y") %> | Updated <%= time_ago_in_words(@section.updated_at) %> ago</p>
+		<p id="section-tags"> Tags: <%= sanitize @section.tag_list.map { |t| link_to t, tag_path(t), class: "label label-default" }.join(' ') %></p>
+	</div>	
 </div>
-
-<p class="back-link-spl">
-	<%= link_to book_path(@chapter.book) do %>
-	  <span class="glyphicon glyphicon-arrow-left"></span>
-	    Back to <strong><%= @book.name %></strong> Book
-	<% end %>
-</p>
 
 <p>
   <%= link_to edit_book_chapter_section_path(@book, @chapter, @section), class: "btn btn-success right section-btn" do %>

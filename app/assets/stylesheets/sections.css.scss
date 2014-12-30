@@ -37,13 +37,12 @@ h3 {
   clear: both;
   padding-top: 10px;
 }
-.section-name {
-  padding: 11px;
+#section-id {  
+  float: left;
+  padding: 5px;
   background: #16a085;
   color: #fff;
-  margin-left: -15px;
-  margin-right: 10px;
-  border-top-left-radius: 3px;
+  margin: 0px 0px 0px 0px;
   text-transform: uppercase;
 }
 .section-link {
@@ -54,4 +53,10 @@ h3 {
 }
 .section-total {
   color: #16a085;
+}
+.section-cover {
+  padding: 10px;
+  background: whitesmoke;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }

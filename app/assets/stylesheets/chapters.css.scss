@@ -27,10 +27,10 @@
 }
 #chapter-id {
   float: left;
-  padding: 10px 50px;
+  padding: 5px;
   background: #d35400;
   color: #fff;
-  margin: -20px 0px 0px -20px;
+  margin: 0px 0px 0px 0px;
   text-transform: uppercase;
 }
 #chapter-description {
@@ -51,4 +51,10 @@ h3 {
 }
 .chapter-link {
   color: #fff !important;  
+}
+.chapter-cover {
+  padding: 10px;
+  background: whitesmoke;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
