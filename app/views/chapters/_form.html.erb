@@ -20,6 +20,10 @@
     <%= f.text_area :description, class: "form-control" %>
   </div>
   <div class="form-group">
+    <%= f.label :tag_list, "Tags (separated by commas)" %>
+    <%= f.text_field :tag_list, value: @chapter.tag_list.to_s, class: "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.submit class: "btn btn-warning" %>
   </div>
 <% end %>
