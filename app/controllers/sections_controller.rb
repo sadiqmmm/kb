@@ -7,7 +7,7 @@ class SectionsController < ApplicationController
   def index
     @book = current_user.books.find(params[:book_id])
     @chapter = Chapter.find(params[:chapter_id])
-    @sections = @chapter.sections.all
+    @sections = @chapter.sections.order(created_at: :desc)
     respond_with(@sections)
   end
 
