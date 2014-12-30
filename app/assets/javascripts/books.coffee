@@ -3,10 +3,10 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).ready ->
   $(".book").hover (->
-    $('.access-links', this).removeClass "hide"
+    $('.book-access-links', this).removeClass "hide"
     return
   ), ->
-    $('.access-links', this).addClass "hide"
+    $('.book-access-links', this).addClass "hide"
     return
 
   return

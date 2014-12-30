@@ -3,16 +3,6 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).ready ->
   $(".chapter").hover (->
-    $('.access-links', this).removeClass "hide"
-    return
-  ), ->
-    $('.access-links', this).addClass "hide"
-    return
-
-  return
-
-$(document).ready ->
-  $(".chapter").hover (->
     $('.chapter-access-links', this).removeClass "hide"
     return
   ), ->

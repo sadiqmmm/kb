@@ -3,7 +3,7 @@
     <div class="panel-heading chapter-list">  
       <span class="chapter-name">        
           <span class='fa fa-file'></span>
-          <%= chapter.name %>
+          <%= link_to chapter.name, book_chapter_path(@book, chapter), class: "chapter-link" %>
       </span> 
       
       <span class="chapter-description"> <%= chapter.description %> </span>  

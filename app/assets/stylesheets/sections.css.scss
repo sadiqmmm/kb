@@ -25,7 +25,7 @@ h3 {
     color: #16a085;   
     }
   a:hover {
-     font-weight: bold
+     font-weight: bold;
    }
   }
 .back-link-spl {
@@ -36,4 +36,22 @@ h3 {
   color: #ccc;
   clear: both;
   padding-top: 10px;
+}
+.section-name {
+  padding: 11px;
+  background: #16a085;
+  color: #fff;
+  margin-left: -15px;
+  margin-right: 10px;
+  border-top-left-radius: 3px;
+  text-transform: uppercase;
+}
+.section-link {
+  color: #fff !important;
+}
+.section-access-links {
+  padding: 0px 10px;
+}
+.section-total {
+  color: #16a085;
 }

@@ -2,6 +2,7 @@
   <p id="chapter-id"><%= @chapter.name %></p>
   <p id="chapter-description"><%= @chapter.description %></p>
   <p id="chapter-time">Created on <%= @chapter.created_at.strftime("%b #{@chapter.created_at.day.ordinalize}, %Y") %> | Updated <%= time_ago_in_words(@chapter.updated_at) %> ago</p>
+  <p id="chapter-tags"> Tags: <%= sanitize @chapter.tag_list.map { |t| link_to t, tag_path(t), class: "label label-default" }.join(' ') %></p>
 </div>
 
 <p class="back-link">
@@ -17,6 +18,8 @@
     New section
   <% end %>
 </p>
-
-<h3><%= pluralize( @chapter.sections.all.length, "Section") %></h3>
+<h3>
+  <span class='fa fa-file-text'></span> 
+  Total ( <span class='section-total'><%= pluralize( @chapter.sections.all.size, "Section") %></span> )
+</h3>
 <%= render partial: 'chapters/section', collection: @chapter.sections %>
