@@ -12,23 +12,28 @@
 
   <div class="book-cover">    
     <p id="book-description"><%= @book.description %></p>
-    <p id="book-time">
-      <b>Created:</b> <%= @book.created_at.strftime("%b #{@book.created_at.day.ordinalize}, %Y") %> | 
-      <b>Updated:</b> <%= time_ago_in_words(@book.updated_at) %> ago
+    <p>
+      <b>Created:</b> 
+      <span class="book-time"><%= @book.created_at.strftime("%b #{@book.created_at.day.ordinalize}, %Y") %></span>
+        |
+      <b>Updated:</b> 
+      <span class="book-time"><%= time_ago_in_words(@book.updated_at) %> ago</span>
+        |
+      <b>Total:</b>
+       <span class='chapter-total'><%= pluralize( @book.chapters.all.size, "Chapter") %></span>
     </p>
-    <p id="book-tags"> Tags: <%= sanitize @book.tag_list.map { |t| link_to t, tag_path(t), class: "label label-default" }.join(' ') %></p>
+    <p id="book-tags"> 
+      <b>Tags:</b>
+      <%= sanitize @book.tag_list.map { |t| link_to t, tag_path(t), class: "label label-default" }.join(' ') %>
+    </p>
+      <p class="overflow-auto">
+        <%= link_to new_book_chapter_path(@book), class: "btn btn-warning chapter-btn right" do %>
+          <span class='fa fa-file'></span>
+           Add Chapter
+        <% end %>
+      </p>      
     </div>
 </div>
 
-<p>
-  <%= link_to new_book_chapter_path(@book), class: "btn btn-warning right chapter-btn" do %>
-    <span class='fa fa-file'></span>
-     New chapter
-  <% end %>
-</p>
 
-<h3>
-  <span class='fa fa-file'></span> 
-  Total (<span class='chapter-total'><%= pluralize( @book.chapters.all.size, "Chapter") %></span>)
-</h3>
 <%= render partial: 'books/chapter', collection: @book.chapters %>
