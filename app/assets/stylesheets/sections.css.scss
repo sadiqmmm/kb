@@ -7,7 +7,7 @@
   background: #16a085;
   color: #fff;
   margin: -20px 0px 0px -20px;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 #section-description {
   clear:both;
@@ -43,7 +43,7 @@ h3 {
   background: #16a085;
   color: #fff;
   margin: 0px 0px 0px 0px;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 .section-link {
   color: #fff !important;
@@ -67,5 +67,5 @@ h3 {
   margin-left: -15px;
   margin-right: 10px;
   border-top-left-radius: 3px;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }

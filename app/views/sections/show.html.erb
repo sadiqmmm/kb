@@ -2,19 +2,19 @@
 	<ul class="breadcrumb-spl">
 	  <li><%= link_to "All Books", books_path %></li>
 	  <li>
-      <%= link_to book_path(@book) do %>
+      <%= link_to book_path(@book), data: { "toggle" => "tooltip", "placement" => "top", "title" => "book"} do %>
         <span class='fa fa-book'></span>
         <%= @book.name %>
       <% end %>
     </li>  
     <li>
-      <%= link_to book_chapter_path(@book, @chapter) do %>
+      <%= link_to book_chapter_path(@book, @chapter), data: { "toggle" => "tooltip", "placement" => "top", "title" => "chapter"} do %>
         <span class='fa fa-file'></span>
         <%= @chapter.name %>
       <% end %>
     </li>
     <li>
-      <%= link_to book_chapter_section_path(@book, @chapter, @section) do %>
+      <%= link_to book_chapter_section_path(@book, @chapter, @section), data: { "toggle" => "tooltip", "placement" => "top", "title" => "section"} do %>
         <span class='fa fa-file-text'></span>
         <%= @section.name %>
       <% end %>

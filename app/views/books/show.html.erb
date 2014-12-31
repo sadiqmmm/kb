@@ -3,7 +3,7 @@
   <ul class="breadcrumb-spl">
     <li><%= link_to "All Books", books_path %></li>
     <li>
-      <%= link_to book_path(@book) do %>
+      <%= link_to book_path(@book), data: { "toggle" => "tooltip", "placement" => "top", "title" => "book"} do %>
         <span class='fa fa-book'></span>
         <%= @book.name %>
       <% end %>

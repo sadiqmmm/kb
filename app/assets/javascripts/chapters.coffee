@@ -9,4 +9,8 @@ $(document).ready ->
     $('.chapter-access-links', this).addClass "hide"
     return
 
+  # for Tooltip
+  $("[data-toggle=\"tooltip\"]").tooltip()
+  return
+
   return  

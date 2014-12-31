@@ -3,7 +3,7 @@
     <div class="panel-heading">        
       <span class="section-name">        
           <span class='fa fa-file-text'></span>
-          <%= link_to section.name, book_chapter_section_path(@book, @chapter, section), class: "section-link" %>
+          <%= link_to section.name, book_chapter_section_path(@book, @chapter, section), class: "section-link", data: { "toggle" => "tooltip", "placement" => "top", "title" => "section"} %>
       </span>
       <span class="section-access-links hide">
         <%= link_to edit_book_chapter_section_path(@book, @chapter, section) do %>
