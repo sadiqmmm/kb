@@ -15,23 +15,44 @@
     </li>       
   </ul>
   <div class="chapter-cover">    
-    <p id="chapter-description"><%= @chapter.description %></p>
-    <p id="chapter-time">
-      <b>Created:</b> <%= @chapter.created_at.strftime("%b #{@chapter.created_at.day.ordinalize}, %Y") %> | 
-      <b>Updated:</b> <%= time_ago_in_words(@chapter.updated_at) %> ago
+    <p id="chapter-description">
+      <b>Description:</b> 
+      <%= @chapter.description %>
     </p>
-    <p id="chapter-tags"> Tags: <%= sanitize @chapter.tag_list.map { |t| link_to t, tag_path(t), class: "label label-default" }.join(' ') %></p>
+    <p>
+      <b>Created:</b>
+      <span class="chapter-time"><%= @chapter.created_at.strftime("%b #{@chapter.created_at.day.ordinalize}, %Y") %></span> | 
+      <b>Updated:</b> 
+      <span class="chapter-time"><%= time_ago_in_words(@chapter.updated_at) %> ago</span> |
+      <b>Total:</b>
+      <span class='section-total'><%= pluralize( @chapter.sections.all.size, "Section") %></span>
+    </p>
+    <p id="chapter-tags"> 
+      <b>Tags:</b>
+      <% if @chapter.tag_list.present? %>
+        <%= sanitize @chapter.tag_list.map { |t| link_to t, tag_path(t), class: "label label-default" }.join(' ') %>
+      <% else %>
+        No tags
+      <% end %>  
+    </p>
+    <p class="overflow-auto">
+      <%= link_to new_book_chapter_section_path(@book, @chapter), class: "btn btn-success right section-btn" do %>
+        <span class="fa fa-file-text"></span>
+        Add Section
+      <% end %>
+    </p>
+    <div class="sort-links">
+      <b>Sort:</b>
+      <a href="#">Alphabet</a> |
+      <a href="#">Created</a> |
+      <a href="#">Updated</a> |
+      <a href="#">Default</a>  
+    </div>  
   </div>  
 </div>
 
-<p>
-  <%= link_to new_book_chapter_section_path(@book, @chapter), class: "btn btn-success right section-btn" do %>
-    <span class="fa fa-file-text"></span>
-    New section
-  <% end %>
-</p>
-<h3>
-  <span class='fa fa-file-text'></span> 
-  Total (<span class='section-total'><%= pluralize( @chapter.sections.all.size, "Section") %></span>)
-</h3>
-<%= render partial: 'chapters/section', collection: @chapter.sections %>
+<% if @chapter.sections.present? %>
+  <%= render partial: 'chapters/section', collection: @chapter.sections %>
+<% else %>
+ <h1>No sections</h1>
+<% end %>

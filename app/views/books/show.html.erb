@@ -30,7 +30,7 @@
       <% if @book.tag_list.present? %>
         <%= sanitize @book.tag_list.map { |t| link_to t, tag_path(t), class: "label label-default" }.join(' ') %>
       <% else %>
-        no tags
+        No tags
       <% end %>
     </p>
     <p class="overflow-auto">
@@ -39,15 +39,19 @@
         Add Chapter
       <% end %>
     </p>
-      <div class="sort-links">
-        <b>Sort:</b>
-        <a href="#">Alphabet</a> |
-        <a href="#">Created</a> |
-        <a href="#">Updated</a> |
-        <a href="#">Default</a>  
-      </div>
+    <div class="sort-links">
+      <b>Sort:</b>
+      <a href="#">Alphabet</a> |
+      <a href="#">Created</a> |
+      <a href="#">Updated</a> |
+      <a href="#">Default</a>  
+    </div>
 
     </div>
 </div>
 
-<%= render partial: 'books/chapter', collection: @book.chapters %>
+<% if @book.chapters.present? %>
+  <%= render partial: 'books/chapter', collection: @book.chapters %>
+<% else %>
+ <h1>No chapters</h1>
+<% end %>

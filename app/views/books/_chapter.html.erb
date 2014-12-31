@@ -30,6 +30,8 @@
         <% end %>
     </p>
 
+    <% if chapter.sections.present? %>
+
       <% chapter.sections.each do |section| %>        
         <p class="section-list">
           <%= link_to book_chapter_section_path(@book, chapter, section), data: { "toggle" => "tooltip", "placement" => "left", "title" => "section"} do %>
@@ -41,6 +43,9 @@
           <%= sanitize section.description %>
         </div>
       <% end %>
+    <% else %>
+      <h1>No sections</h1>
+    <% end %>      
     </div>
   </div>
 </div>
