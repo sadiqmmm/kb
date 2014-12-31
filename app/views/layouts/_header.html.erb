@@ -20,13 +20,13 @@
 
       <ul class="nav navbar-nav navbar-right">              
                
-        <% if user_signed_in? %>             
+        <% if user_signed_in? %>  
           <li>
             <%= link_to edit_user_registration_path do %>
-              <span class="glyphicon glyphicon-cog"></span>
-              Account Settings
+              <span class="glyphicon glyphicon-user"></span>
+              <%= current_user.name if current_user.name.present? %>
             <% end %>
-          </li>   
+          </li>                       
           <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
               <span class="glyphicon glyphicon-log-out"></span>
