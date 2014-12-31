@@ -3,10 +3,16 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).ready ->
   $(".book").hover (->
-    $('.book-access-links', this).removeClass "hide"
+    $(".book-access-links", this).removeClass "hide"
     return
   ), ->
-    $('.book-access-links', this).addClass "hide"
+    $(".book-access-links", this).addClass "hide"
+    return
+   
+  # link will expand chapter sections
+  $("#expand-chapter").on "click", (event) ->
+    event.preventDefault()
+    $(".glyphicon").toggleClass "glyphicon-plus glyphicon-minus"
     return
 
   return

@@ -15,7 +15,7 @@
         <% end %>                   
       </span>
       <span class="chapter-access-links hide">
-        <%= link_to '#', data: { "toggle" => "collapse", "target" => ".#{chapter.id}" } do %>
+        <%= link_to '#', data: { "toggle" => "collapse", "target" => ".#{chapter.id}" }, id: "expand-chapter" do %>
           <span class="glyphicon glyphicon-plus"></span>
             Expand
         <% end %>             
