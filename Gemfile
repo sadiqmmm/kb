@@ -32,6 +32,7 @@ group :production do
 end
 
 gem 'jquery-turbolinks'
+gem 'jquery-ui-rails'
 gem 'devise'
 gem 'puma', '~> 2.10.2'
 gem 'bootstrap-sass', '~> 3.3.1'
