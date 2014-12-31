@@ -11,7 +11,10 @@
   </ul>
 
   <div class="book-cover">    
-    <p id="book-description"><%= @book.description %></p>
+    <p id="book-description">
+      <b>Description:</b> 
+      <%= @book.description %>
+    </p>
     <p>
       <b>Created:</b> 
       <span class="book-time"><%= @book.created_at.strftime("%b #{@book.created_at.day.ordinalize}, %Y") %></span>
@@ -34,6 +37,5 @@
       </p>      
     </div>
 </div>
-
 
 <%= render partial: 'books/chapter', collection: @book.chapters %>
