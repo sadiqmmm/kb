@@ -2,11 +2,15 @@
 	
   <ul class="breadcrumb-spl">
     <li><%= link_to "All Books", books_path %></li>
-    <li><%= link_to @book.name, book_path(@book) %></li>  
+    <li>
+      <%= link_to book_path(@book) do %>
+        <span class='fa fa-book'></span>
+        <%= @book.name %>
+      <% end %>
+    </li>  
   </ul>
 
-  <div class="book-cover">
-    <p id="book-id"><span class='glyphicon glyphicon-book'></span> <%= @book.name %></p>
+  <div class="book-cover">    
     <p id="book-description"><%= @book.description %></p>
     <p id="book-time">Created on <%= @book.created_at.strftime("%b #{@book.created_at.day.ordinalize}, %Y") %> | Updated <%= time_ago_in_words(@book.updated_at) %> ago</p>
     <p id="book-tags"> Tags: <%= sanitize @book.tag_list.map { |t| link_to t, tag_path(t), class: "label label-default" }.join(' ') %></p>
@@ -22,6 +26,6 @@
 
 <h3>
   <span class='fa fa-file'></span> 
-  Total ( <span class='chapter-total'><%= pluralize( @book.chapters.all.size, "Chapter") %></span> )
+  Total (<span class='chapter-total'><%= pluralize( @book.chapters.all.size, "Chapter") %></span>)
 </h3>
 <%= render partial: 'books/chapter', collection: @book.chapters %>

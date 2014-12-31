@@ -1,15 +1,26 @@
 <div class="chapter-section">
 	<ul class="breadcrumb-spl">
 	  <li><%= link_to "All Books", books_path %></li>
-	  <li><%= link_to @book.name, book_path(@book) %></li> 
-	  <li><%= link_to @chapter.name, book_chapter_path(@book, @chapter) %></li>
-	  <li><%= link_to @section.name, book_chapter_section_path(@book, @chapter, @section) %></li> 
+	  <li>
+      <%= link_to book_path(@book) do %>
+        <span class='fa fa-book'></span>
+        <%= @book.name %>
+      <% end %>
+    </li>  
+    <li>
+      <%= link_to book_chapter_path(@book, @chapter) do %>
+        <span class='fa fa-file'></span>
+        <%= @chapter.name %>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to book_chapter_section_path(@book, @chapter, @section) do %>
+        <span class='fa fa-file-text'></span>
+        <%= @section.name %>
+      <% end %>
+    </li>   
 	</ul>
-	<div class="section-cover">
-		<p id="section-id">
-		  <span class="fa fa-file-text"></span>
-		  <%= @section.name %>
-		</p>  
+	<div class="section-cover">		
 		<p id="section-time">Created on <%= @section.created_at.strftime("%b #{@section.created_at.day.ordinalize}, %Y") %> | Updated <%= time_ago_in_words(@section.updated_at) %> ago</p>
 		<p id="section-tags"> Tags: <%= sanitize @section.tag_list.map { |t| link_to t, tag_path(t), class: "label label-default" }.join(' ') %></p>
 	</div>	
