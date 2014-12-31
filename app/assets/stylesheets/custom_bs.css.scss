@@ -13,22 +13,22 @@ $brand-success: #16a085;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 .navbar-brand {
-	font-weight: bold;
+  font-weight: bold;
 }
 .center {
-	text-align: center;
+  text-align: center;
 }
 .left {
   float: left;
 }
 .right {
-	float: right;
+  float: right;
 }
 .hide {
-	display: none;
+  display: none;
 }
 .show {
-	display: block;	
+  display: block; 
 }
 .back-link {
   clear: both;
@@ -37,71 +37,65 @@ $brand-success: #16a085;
   margin-bottom: 0px;
 }
 textarea {
-	max-width: 100%;
+  max-width: 100%;
 }
 .breadcrumb-spl { 
   list-style: none; 
   overflow: hidden; 
-  padding: 0px;	 
+  padding: 0px;  
 }
 .breadcrumb-spl li { 
-	float: left; 
+  float: left; 
 }
 .breadcrumb-spl li a {
-	color: white;
-	text-decoration: none; 
-	padding: 10px 0 10px 55px;	
-	background: #95a5a6; 
-	position: relative; 
-	display: block;
-	float: left;
+  color: white;
+  text-decoration: none; 
+  padding: 10px 0 10px 55px;  
+  background: #95a5a6; 
+  position: relative; 
+  display: block;
+  float: left;
 }
 .breadcrumb-spl li a:after { 
-	content: " "; 
-	display: block; 
-	width: 0; 
-	height: 0;
-	border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
-	border-bottom: 50px solid transparent;
-	border-left: 30px solid #95a5a6;
-	position: absolute;
-	top: 50%;
-	margin-top: -50px; 
-	left: 100%;
-	z-index: 2; 
-}	
+  content: " "; 
+  display: block; 
+  width: 0; 
+  height: 0;
+  border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
+  border-bottom: 50px solid transparent;
+  border-left: 30px solid #95a5a6;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px; 
+  left: 100%;
+  z-index: 2; 
+} 
 .breadcrumb-spl li a:before { 
-	content: " "; 
-	display: block; 
-	width: 0; 
-	height: 0;
-	border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
-	border-bottom: 50px solid transparent;
-	border-left: 30px solid white;
-	position: absolute;
-	top: 50%;
-	margin-top: -50px; 
-	margin-left: 1px;
-	left: 100%;
-	z-index: 1; 
-}	
+  content: " "; 
+  display: block; 
+  width: 0; 
+  height: 0;
+  border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
+  border-bottom: 50px solid transparent;
+  border-left: 30px solid white;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px; 
+  margin-left: 1px;
+  left: 100%;
+  z-index: 1; 
+} 
 .breadcrumb-spl li:first-child a {
-	padding-left: 10px;
+  padding-left: 10px;
 }
 .breadcrumb-spl li:nth-child(2) a       { background:        #c0392b }
 .breadcrumb-spl li:nth-child(2) a:after { border-left-color: #c0392b }
 .breadcrumb-spl li:nth-child(3) a       { background:        #d35400 }
 .breadcrumb-spl li:nth-child(3) a:after { border-left-color: #d35400 }
-.breadcrumb-spl li:nth-child(4) a       { background:        hsla(34,85%,65%,1); }
-.breadcrumb-spl li:nth-child(4) a:after { border-left-color: hsla(34,85%,65%,1); }
+.breadcrumb-spl li:nth-child(4) a       { background:        #16a085; }
+.breadcrumb-spl li:nth-child(4) a:after { border-left-color: #16a085; }
 .breadcrumb-spl li:nth-child(5) a       { background:        hsla(34,85%,75%,1); }
 .breadcrumb-spl li:nth-child(5) a:after { border-left-color: hsla(34,85%,75%,1); }
-.breadcrumb-spl li:last-child a {
-	background: white !important;
-	color: black;
-	pointer-events: none;
-		cursor: default;
-}
-.breadcrumb-spl li:last-child a:after { border: 0; }
+ 
 .breadcrumb-spl li a:hover { background: #2c3e50; }
 .breadcrumb-spl li a:hover:after { border-left-color: #2c3e50 !important; }

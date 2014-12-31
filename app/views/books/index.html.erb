@@ -1,11 +1,14 @@
+<ul class="breadcrumb-spl">
+    <li><%= link_to "All Books", books_path %></li>     
+</ul>
 <%= link_to new_book_path, class: "btn btn-primary right" do %>
-  <span class="glyphicon glyphicon-book"></span>
+  <span class="fa fa-book"></span>
   New book
 <% end %>
 
 <h1>
-  <span class='glyphicon glyphicon-book'></span> 
-  <span class= 'book-total'> <%= pluralize( @books.all.size, "Book") %></span>
+  <span class='fa fa-book'></span> 
+  Total (<span class= 'book-total'> <%= pluralize( @books.all.size, "Book") %></span> )
 </h1>
 <table class="table table-hover">
 
@@ -13,7 +16,7 @@
     <tr class="book">
       <td>
         <%= link_to book, class: "book-link" do %>
-          <span class="glyphicon glyphicon-book"></span>
+          <span class="fa fa-book"></span>
           <%= book.name %>
         <% end %>     
         <span class="book-access-links hide">
