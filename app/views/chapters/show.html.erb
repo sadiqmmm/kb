@@ -16,7 +16,10 @@
   </ul>
   <div class="chapter-cover">    
     <p id="chapter-description"><%= @chapter.description %></p>
-    <p id="chapter-time">Created on <%= @chapter.created_at.strftime("%b #{@chapter.created_at.day.ordinalize}, %Y") %> | Updated <%= time_ago_in_words(@chapter.updated_at) %> ago</p>
+    <p id="chapter-time">
+      <b>Created:</b> <%= @chapter.created_at.strftime("%b #{@chapter.created_at.day.ordinalize}, %Y") %> | 
+      <b>Updated:</b> <%= time_ago_in_words(@chapter.updated_at) %> ago
+    </p>
     <p id="chapter-tags"> Tags: <%= sanitize @chapter.tag_list.map { |t| link_to t, tag_path(t), class: "label label-default" }.join(' ') %></p>
   </div>  
 </div>

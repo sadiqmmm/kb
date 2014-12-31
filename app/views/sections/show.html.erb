@@ -21,7 +21,10 @@
     </li>   
 	</ul>
 	<div class="section-cover">		
-		<p id="section-time">Created on <%= @section.created_at.strftime("%b #{@section.created_at.day.ordinalize}, %Y") %> | Updated <%= time_ago_in_words(@section.updated_at) %> ago</p>
+		<p id="section-time">
+      <b>Created:</b> <%= @section.created_at.strftime("%b #{@section.created_at.day.ordinalize}, %Y") %> | 
+      <b>Updated:</b> <%= time_ago_in_words(@section.updated_at) %> ago
+    </p>
 		<p id="section-tags"> Tags: <%= sanitize @section.tag_list.map { |t| link_to t, tag_path(t), class: "label label-default" }.join(' ') %></p>
 	</div>	
 </div>
