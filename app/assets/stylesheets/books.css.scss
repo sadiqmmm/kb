@@ -38,12 +38,16 @@ h3 {
 .book-cover {
   padding: 10px;
   background: #f8ebe9;
-  margin-bottom: 10px;  
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);  
 }
 .index-book-cover {
   padding: 10px;
   background: #f4f6f6;
   margin-bottom: 10px;  
+  border: 1px solid transparent;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);  
 }
 .book-edit {
   padding-left: 10px;

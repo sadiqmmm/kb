@@ -24,6 +24,13 @@
 
 	<div class="section-cover">		
 		<p>
+      <b>Section:</b>
+      <%= @section.name %>
+      <%= link_to edit_book_chapter_section_path(@book, @chapter, @section), class: "section-edit" do %>        
+        <span class="label label-success">Edit</span>
+      <% end %>
+    </p>
+    <p>
       <b>Created:</b> 
       <span class="section-time"> 
         <%= @section.created_at.strftime("%b #{@section.created_at.day.ordinalize}, %Y") %>
@@ -40,13 +47,7 @@
       <% else %>
         No tags
       <% end %>  
-    </p>
-    <p class="overflow-auto">
-      <%= link_to edit_book_chapter_section_path(@book, @chapter, @section), class: "btn btn-success right section-btn" do %>
-        <span class="glyphicon glyphicon-edit"></span>
-        Edit
-      <% end %>
-    </p>
+    </p>    
 	</div>	
 </div>
 

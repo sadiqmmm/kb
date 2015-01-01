@@ -64,7 +64,8 @@
 </div>
 
 <% if @book.chapters.present? %>
+  <h1 class="center">All chapters</h1>
   <%= render partial: 'books/chapter', collection: @book.chapters %>
 <% else %>
- <h1>No chapters</h1>
+ <h1 class="center">No chapters</h1>
 <% end %>

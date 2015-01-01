@@ -1,7 +1,7 @@
 <p class="back-link">
-	<%= link_to book_path(@chapter.book) do %>
+	<%= link_to book_chapter_section_path(@book, @chapter, @section), class: "btn btn-default" do %>
 	  <span class="glyphicon glyphicon-arrow-left"></span>
-	    Back to <strong><%= @book.name %></strong> Book
+	    Back to <strong><%= @section.name %></strong> Section
 	<% end %>
 </p>
 <h1>Editing Section</h1>

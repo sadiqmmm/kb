@@ -14,10 +14,28 @@
       <% end %>
     </li>       
   </ul>
-  <div class="chapter-cover">    
+  <div class="chapter-cover">
+    <p>
+      <%= link_to new_book_chapter_section_path(@book, @chapter), class: "btn btn-success right section-btn" do %>
+        <span class="fa fa-file-text"></span>
+        Add Section
+      <% end %>
+    </p>
+    
+    <p>
+      <b>Chapter:</b> 
+      <%= @chapter.name %>
+      <%= link_to edit_book_chapter_path(@book, @chapter), class: "chapter-edit" do %>        
+        <span class="label label-warning">Edit</span>
+      <% end %>
+    </p>    
     <p id="chapter-description">
       <b>Description:</b> 
-      <%= @chapter.description %>
+      <% if @chapter.description.present? %>
+        <%= @chapter.description %>
+      <% else %>
+      No description
+      <% end %>
     </p>
     <p>
       <b>Created:</b>
@@ -35,12 +53,7 @@
         No tags
       <% end %>  
     </p>
-    <p class="overflow-auto">
-      <%= link_to new_book_chapter_section_path(@book, @chapter), class: "btn btn-success right section-btn" do %>
-        <span class="fa fa-file-text"></span>
-        Add Section
-      <% end %>
-    </p>
+    
     <div class="sort-links">
       <b>Sort:</b>
       <a href="#">Alphabet</a> |
@@ -52,7 +65,8 @@
 </div>
 
 <% if @chapter.sections.present? %>
+  <h1 class="center">All sections</h1>
   <%= render partial: 'chapters/section', collection: @chapter.sections %>
 <% else %>
- <h1>No sections</h1>
+ <h1 class="center">No sections</h1>
 <% end %>

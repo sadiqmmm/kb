@@ -20,7 +20,7 @@
 </div>
 
 <% if @books.present? %>
-
+  <h1 class="center">All books</h1>
   <table class="table table-hover">
 
     <% @books.each do |book| %>       
@@ -41,5 +41,5 @@
 
   </table>
 <% else %>
-  <h1>No books</h1>
+  <h1 class="center">No books</h1>
 <% end %>

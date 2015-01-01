@@ -57,7 +57,9 @@ h3 {
 .section-cover {
   padding: 10px;
   background: #e7f5f2;
-  margin-bottom: 10px;  
+  margin-bottom: 10px; 
+  border: 1px solid transparent;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);   
 }
 .section-name {
   padding: 11px;
@@ -67,4 +69,7 @@ h3 {
   margin-right: 10px;
   border-top-left-radius: 3px;
   text-transform: capitalize;
+}
+.section-edit {
+  padding-left: 10px;
 }
