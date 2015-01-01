@@ -60,7 +60,13 @@
       <a href="#">Created</a> |
       <a href="#">Updated</a> |
       <a href="#">Default</a>  
-    </div>  
+    </div>
+    <p class="back-link">
+      <%= link_to book_path(@book), class: "label label-default" do %>        
+        <span class="glyphicon glyphicon-arrow-left"></span>
+        Go Back
+      <% end %>    
+    </p>  
   </div>  
 </div>
 

@@ -47,6 +47,12 @@
       <% else %>
         No tags
       <% end %>  
+    </p>
+    <p class="back-link">
+      <%= link_to book_chapter_path(@book, @chapter), class: "label label-default" do %>        
+        <span class="glyphicon glyphicon-arrow-left"></span>
+        Go Back
+      <% end %>    
     </p>    
 	</div>	
 </div>
