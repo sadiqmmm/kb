@@ -1,6 +1,6 @@
-<%= link_to books_path do %>
+<%= link_to book_path(@book), class: "btn btn-default" do %>
   <span class="glyphicon glyphicon-arrow-left"></span>
-    Back to <strong>All Books</strong>
+    Back to <strong><%= @book.name %> Book</strong>
 <% end %>
 
 <h1>Editing Book <strong><%= @book.name %></strong></h1>
