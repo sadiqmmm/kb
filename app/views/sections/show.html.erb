@@ -51,5 +51,9 @@
 </div>
 
 <div id="section-description">
-  <%= sanitize (@section.description) %>
+  <% if @section.description.present? %>
+    <%= sanitize (@section.description) %>
+  <% else %>
+    <h1>No Description</h1>
+  <% end %>  
 </div>

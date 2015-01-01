@@ -51,10 +51,10 @@ ActiveRecord::Schema.define(version: 20141229181926) do
 
   create_table "sections", force: :cascade do |t|
     t.string   "name",        limit: 255
-    t.text     "description", limit: 65535
+    t.text     "description", limit: 4294967295
     t.integer  "chapter_id",  limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   add_index "sections", ["chapter_id"], name: "index_sections_on_chapter_id", using: :btree
