@@ -5,15 +5,21 @@
           <span class='fa fa-file-text'></span>
           <%= link_to section.name, book_chapter_section_path(@book, @chapter, section), class: "section-link", data: { "toggle" => "tooltip", "placement" => "top", "title" => "section"} %>
       </span>
-      <span class="section-access-links hide">
+      <span class="section-access-links">
         <%= link_to edit_book_chapter_section_path(@book, @chapter, section) do %>
           <span class="glyphicon glyphicon-edit"></span>
           Edit
         <% end %>             
       </span>
+      <span class="section-access-links">
+        <%= link_to '#', data: { "toggle" => "collapse", "target" => ".#{section.id}" }, class: "expand-section" do %>
+          <span class="glyphicon glyphicon-plus"></span>
+            Expand
+        <% end %>             
+      </span>
     </div>
     
-    <div class="panel-body">
+    <div class="panel-body <%= section.id %> collapse">
         <div id="section-description"><%= sanitize (section.description) %></div>
     </div>
   </div>

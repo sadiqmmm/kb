@@ -4,34 +4,40 @@
       <span class="chapter-name">        
           <span class='fa fa-file'></span>
           <%= link_to chapter.name, book_chapter_path(@book, chapter), class: "chapter-link", data: { "toggle" => "tooltip", "placement" => "top", "title" => "chapter"} %>
-      </span> 
-           
-      <span class="chapter-description"> <%= chapter.description %> </span>  
+      </span>    
       
-      <span class="chapter-access-links hide">
+      <span class="chapter-access-links">
         <%= link_to edit_book_chapter_path(@book, chapter) do %>
           <span class="glyphicon glyphicon-edit"></span>
             Edit
         <% end %>                   
       </span>
-      <span class="chapter-access-links hide">
-        <%= link_to '#', data: { "toggle" => "collapse", "target" => ".#{chapter.id}" }, id: "expand-chapter" do %>
+      <span class="chapter-access-links">
+        <%= link_to '#', data: { "toggle" => "collapse", "target" => ".#{chapter.id}" }, class: "expand-chapter" do %>
           <span class="glyphicon glyphicon-plus"></span>
             Expand
         <% end %>             
       </span>
     </div>
     
-    <div class="panel-body panel-body-min-height">
-    <p>
-      <%= link_to new_book_chapter_section_path(@book, chapter), class: "btn btn-success right section-btn chapter-access-links hide" do %>
-          <span class="fa fa-file-text"></span>
-          Add Section
+    <div class="panel-body panel-body-min-height <%= chapter.id %> collapse">
+      <p>
+        <%= link_to new_book_chapter_section_path(@book, chapter), class: "btn btn-success right section-btn chapter-access-links" do %>
+            <span class="fa fa-file-text"></span>
+            Add Section
+          <% end %>
+      </p>  
+      <p class="chapter-description">
+        <b>Description: </b> 
+        <% if chapter.description.present? %>
+          <%= chapter.description %>
+        <% else %>
+          No description
         <% end %>
-    </p>
-
+      </p>  
+    
     <% if chapter.sections.present? %>
-
+      <h1>All sections</h1>
       <% chapter.sections.each do |section| %>        
         <p class="section-list">
           <%= link_to book_chapter_section_path(@book, chapter, section), data: { "toggle" => "tooltip", "placement" => "left", "title" => "section"} do %>
@@ -39,7 +45,7 @@
             <%= section.name %>
           <% end %>
         </p>
-        <div class="section-description <%= chapter.id %> collapse">
+        <div class="section-description collapse">
           <%= sanitize section.description %>
         </div>
       <% end %>

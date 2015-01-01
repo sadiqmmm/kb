@@ -10,9 +10,15 @@ $(document).ready ->
     return
    
   # link will expand chapter sections
-  $("#expand-chapter").on "click", (event) ->
+  $(".expand-chapter").on "click", (event) ->
     event.preventDefault()
-    $(".glyphicon").toggleClass "glyphicon-plus glyphicon-minus"
+    $(".glyphicon", this).toggleClass "glyphicon-plus glyphicon-minus"
+    return
+
+  # link will expand sections
+  $(".expand-section").on "click", (event) ->
+    event.preventDefault()
+    $(".glyphicon", this).toggleClass "glyphicon-plus glyphicon-minus"
     return
 
   return
