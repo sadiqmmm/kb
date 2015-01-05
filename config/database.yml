@@ -19,13 +19,14 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: 5
+  pool: 25  # postgres default max_connections = 100
 
 development:
   <<: *default
   database: kb_development
   username: postgres
   password: pgadmin
+  timeout:  15000
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -85,3 +86,19 @@ production:
   database: kb_production
   username: kb
   password: <%= ENV['KB_DATABASE_PASSWORD'] %>
+
+
+#===========================
+# Production Sample file
+#===========================
+#  production:
+#    adapter: postgresql
+#    encoding: utf8
+#    database: rails_myapp
+#    username: rails_myapp_user
+#    password: pwd
+#    host: 1.2.3.4
+#    port: 5432
+#    pool: 25
+# Database timeout in milliseconds
+#    timeout: 15000

@@ -16,9 +16,9 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   
   # Mount pghero only in production
-  if Rails.env.production?
-    mount PgHero::Engine, at: "pghero"
-  end
+  #if Rails.env.production?
+    mount PgHero::Engine, at: "showpg"
+  #end
   
 
   # The priority is based upon order of creation: first created -> highest priority.
