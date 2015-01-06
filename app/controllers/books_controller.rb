@@ -6,10 +6,10 @@ class BooksController < ApplicationController
 
   def index
     if params[:tag]      
-      @books = current_user.books.tagged_with(params[:tag]).order(created_at: :desc)
+      @books = current_user.books.tagged_with(params[:tag]).order(id: :desc)
       respond_with(@books)
     else
-      @books = current_user.books.order(created_at: :desc)
+      @books = current_user.books.order(id: :desc)
       respond_with(@books)
     end
   end

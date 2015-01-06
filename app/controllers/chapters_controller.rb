@@ -6,7 +6,7 @@ class ChaptersController < ApplicationController
 
   def index
     @book = current_user.books.find(params[:book_id])
-    @chapters = @book.chapters.order(created_at: :desc)
+    @chapters = @book.chapters.order(id: :desc)
     respond_with(@chapters)
   end
 
