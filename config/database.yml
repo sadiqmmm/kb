@@ -24,7 +24,8 @@ default: &default
 development:
   <<: *default
   database: kb_development
-  username: postgres
+  host: localhost
+  username: kb
   password: pgadmin
   timeout:  15000
 
