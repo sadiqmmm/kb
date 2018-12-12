@@ -26,14 +26,14 @@ end
 
 group :production, :development, :test do 	
 	gem 'rails_12factor'
-	gem 'pg'
+	gem 'pg', '0.18.4'
 	gem 'pghero'
 end
 
 gem 'jquery-turbolinks'
-gem 'devise'
+gem 'devise', '3.5.10'
 gem 'puma'
-gem 'bootstrap-sass', '~> 3.3.1'
+gem 'bootstrap-sass', '3.3.1'
 gem 'autoprefixer-rails'
 gem 'kaminari'
 gem 'carrierwave'
